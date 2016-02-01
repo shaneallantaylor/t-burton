@@ -52,7 +52,7 @@ h1 {
   padding-left: 25px;
   padding-right: 25px;
   height: 100%;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .top-bar {
@@ -157,7 +157,55 @@ Must Depreciate gracefully with solid border.
 }
 
 .content-container {
+/*  height: 100%;*/
+}
+
+.selected-work {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
   height: 100%;
+  max-width: 100%;
+}
+
+.selected-work a {
+  max-width: 50%;
+  width: calc(50% - 4px);
+  position: relative;
+  transition: all 0.5s;
+  box-sizing: border-box;
+  margin: 0 2px 4px 2px;
+}
+
+.video-thumb {
+  background-size: cover;
+  cursor: pointer;
+  transition: all 0.5s;
+  background-position: center top;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  left: 0;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-image: url("../img/mock/v1.jpg");
+  z-index: 900;
+}
+
+.video-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.video-thumb:hover .video-overlay {
+  opacity: 1;
 }
 
 .press-content {
