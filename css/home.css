@@ -180,8 +180,6 @@ Must Depreciate gracefully with solid border.
 }
 
 .video-thumb {
-  background-size: cover;
-  cursor: pointer;
   transition: all 0.5s;
   background-position: center top;
   position: relative;
@@ -190,9 +188,6 @@ Must Depreciate gracefully with solid border.
   justify-content: flex-end;
   left: 0;
   width: 100%;
-  padding-bottom: 56.25%;
-  background-image: url("../img/mock/v1.jpg");
-  z-index: 900;
 }
 
 .video-overlay {
@@ -202,6 +197,8 @@ Must Depreciate gracefully with solid border.
   background: rgba(0, 0, 0, 0.75);
   opacity: 0;
   transition: all 0.5s;
+  z-index: 33;
+  top: 0;
 }
 
 .overlay-text-container {
@@ -214,7 +211,7 @@ Must Depreciate gracefully with solid border.
   text-align: center;
 }
 
-.video-thumb:hover .video-overlay {
+.video-overlay:hover {
   opacity: 1;
 }
 
