@@ -21,6 +21,11 @@
 html, body {
   height: 100%;
   background-color: #f8f8f8;
+  color: #2a2a2a;
+}
+
+a:visited {
+  color: #2a2a2a;
 }
 
 h1 {
@@ -34,6 +39,14 @@ h1 {
   color: #ff6200;
 }
 
+.blue {
+  color: #00afe1;
+}
+
+.menu.current-page {
+  color: grey;
+}
+
 .site-container {
   font-family: RW-R;
   padding-left: 25px;
@@ -44,11 +57,14 @@ h1 {
 
 .top-bar {
   height: 60px;
+  width: 100%;
+  display: table;
 }
 
 .title-container {
-  padding-top: 6px;
-  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
+
 }
 
 .menu-container {
@@ -56,22 +72,84 @@ h1 {
   float: right;
 }
 
-.menu-container.homepage {
+.homepage .menu-container {
   position: absolute;
-  top: 100px;
-  right: 100px;
+  top: 170px;
+  right: 50%;
+  transform: translateX(50%);
+  text-align: center;
 }
 
-.menu-container.homepage ul li {
+/* Below is the fancy stuff to make the gradient work on everything but iOS Safari and IE8.
+Must Depreciate gracefully with solid border.
+!!!!! */
+
+.homepage .menu-container:before, .homepage .menu-container:after {
+  content: "";
+  position: absolute;
+}
+.homepage .menu-container:before {
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background-image: -webkit-gradient(left,  #ff6200 0%, #00afe1 100%);
+  background-image: -webkit-linear-gradient(left,  #ff6200 0%, #00afe1 100%);
+  background-image: -moz-linear-gradient(left,  #ff6200 0%, #00afe1 100%);
+  z-index: -2;
+}
+.homepage .menu-container:after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #f8f8f8;
+  z-index: -1;
+}
+
+/*.homepage .inner-menu-container {
+  background-color: white;
+  position: absolute;
+  top: 170px;
+  right: 50%;
+  transform: translateX(50%);
+}*/
+
+
+/*  border-color: -moz-linear-gradient(left,  #ff6200 0%, #00afe1 100%) #00afe1 -moz-linear-gradient(left,  #ff6200 0%, #00afe1 100%) #ff6200;
+
+  border-color: -webkit-linear-gradient(left,  #ff6200 0%, #00afe1 100%) #00afe1 -webkit-linear-gradient(left,  #ff6200 0%, #00afe1 100%) #ff6200;
+
+  border-color: linear-gradient(left,  #ff6200 0%, #00afe1 100%) #00afe1 linear-gradient(left,  #ff6200 0%, #00afe1 100%) #ff6200;*/
+
+.homepage .menu {
+  padding: 0;
+  margin: 40px;
+  line-height: 1.6;
+}
+
+.homepage .menu li {
+  margin: 0;
   display: inherit;
+  font-size: 2.5em;
 }
 
 .menu {
-  color: red;
+/*  color: red;*/
 }
 
 .menu li {
+  font-size: 18px;
+  margin-left: 17px;
   display: inline;
+}
+
+.menu li:hover {
+  border-bottom: thin solid #00afe1;
+}
+
+.homepage  .menu-container li:hover {
+  border-bottom: none;
 }
 
 .menu li a {
