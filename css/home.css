@@ -204,8 +204,22 @@ Must Depreciate gracefully with solid border.
   transition: all 0.5s;
 }
 
+.overlay-text-container {
+  font-family: RW-R;
+  position: absolute;
+  color: white;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
 .video-thumb:hover .video-overlay {
   opacity: 1;
+}
+
+.title-text {
+  font-size: 30px;
 }
 
 .press-content {
