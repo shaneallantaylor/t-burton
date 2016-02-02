@@ -41,7 +41,7 @@ html, body {
   height: 0;
 }
 
-.close-button {
+.video-close-button {
   cursor: pointer;
   position: absolute;
   top: -65px;
@@ -86,6 +86,69 @@ html, body {
   height: 100%;
   transform: translate(-50%, -50%);
 }
+
+.contact-view {
+  background: rgba(0, 0, 0, 0.90);
+  position: absolute;
+  z-index: 34;
+  height: 100vh;
+  width: 100vw;
+  top:0;
+  left:0;
+  overflow: hidden;
+}
+
+.contact-container {
+  background-color: white;
+  width: 44%;
+  top: 120px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.contact-header {
+  margin-top: -10px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: x-large;
+}
+
+.contact-container .details {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.personal.details {
+  padding-bottom: 20px;
+}
+
+#phone-number {
+  padding-top: 15px;
+}
+
+.contact-container h4 {
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-family: RW-SB;
+}
+
+.contact-close-button {
+  cursor: pointer;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 7px;
+  right: 10px;
+  font-size: x-large;
+  transition: all 0.5s;
+}
+
+.contact-close-button:hover {
+  color: #00afe1;
+}
+
+
 
 a:visited {
   color: #2a2a2a;
