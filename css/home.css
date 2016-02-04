@@ -363,7 +363,9 @@ Must Depreciate gracefully with solid border.
 @media (max-width: 600px) {
 
   .site-container {
-    padding: 0 10px;
+    padding: 0 9px;
+    position: relative;
+    background-color: green;
   }
 
   .homepage .site-container:before, .homepage .site-container:after {
@@ -391,9 +393,7 @@ Must Depreciate gracefully with solid border.
     z-index: 1;
     height: calc(100% - 6px);
     width: calc(100% - 6px);
-}
-
-
+  }
 
   .homepage .top-bar {
     position: absolute;
@@ -418,4 +418,90 @@ Must Depreciate gracefully with solid border.
     display: none;
   }
 
+  .menu-container {
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .selected-work a {
+    max-width: 100%;
+    width: 100%;
+    margin: 0px 2px 5px 2px;
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .menu li {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+
+  .menu li:first-child {
+    margin-left: 0;
+  }
+
+  .content-container {
+    padding-top: 25px;
+  }
+
+  .video-overlay {
+    display: none;
+  }
+
+  .press-content {
+    padding-top: 0;
+    width: 95%;
+    font-size: 16px;
+  }
+
+  .playback-video {
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  .playback-details-ref {
+    width: 95%;
+    height: 95%;
+  }
+
+  .video-details {
+    font-size: 10px;
+    bottom: -40px;
+  }
+
+  .video-title {
+    font-size: x-large;
+    top: -50px;
+  }
+
+  .video-close-button {
+    font-size: x-large;
+    top: -50px;
+  }
+
+  .contact-container {
+    width: 95%;
+  }
+
+  .contact-header, .contact-close-button {
+    font-size: larger;
+  }
+
+  .contact-container h4, .contact-container .details {
+    font-size: small;
+  }
+
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .site-container {
+    padding: 0 9px;
+    position: relative;
+    background-color: blue;
 }
