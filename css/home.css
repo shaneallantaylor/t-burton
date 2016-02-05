@@ -100,6 +100,7 @@ a, a:visited {
 
 .site-title {
   text-align: center;
+  text-align: -moz-center;
   font-size: 16px;
 }
 
@@ -178,6 +179,7 @@ a, a:visited {
   padding: 0;
   width: 100vw;
   text-align: center;
+  text-align: -moz-center;
 }
 
 .menu li {
@@ -204,6 +206,7 @@ a, a:visited {
 
 .press-content {
   text-align: -webkit-center;
+  text-align: -moz-center;
   padding-top: 0;
   width: 95%;
   font-size: 16px;
@@ -291,6 +294,7 @@ a, a:visited {
   width: 100%;
   top: -65px;
   text-align: -webkit-center;
+  text-align: -moz-center;
   font-size: xx-large;
 }
 
@@ -299,6 +303,7 @@ a, a:visited {
   position: absolute;
   bottom: -55px;
   text-align: -webkit-center;
+  text-align: -moz-center;
   width: 100%;
 }
 
@@ -355,6 +360,7 @@ a, a:visited {
   margin-top: -10px;
   padding-top: 20px;
   text-align: center;
+  text-align: -moz-center;
   font-size: x-large;
 }
 
@@ -462,6 +468,7 @@ a, a:visited {
     width: 100%;
     top: -65px;
     text-align: -webkit-center;
+    text-align: -moz-center;
     font-size: xx-large;
   }
 
@@ -471,6 +478,7 @@ a, a:visited {
     position: absolute;
     bottom: -55px;
     text-align: -webkit-center;
+    text-align: -moz-center;
     width: 100%;
   }
 
@@ -530,6 +538,7 @@ a, a:visited {
   .site-title {
   font-family: RW-EL;
   text-align: inherit;
+  text-align: -moz-inherit;
   font-size: 26px;
   }
 
@@ -603,6 +612,7 @@ a, a:visited {
 
   .homepage .menu {
     text-align: center;
+    text-align: -moz-center;
     padding: 30px 0;
     margin: 0;
     line-height: 1.6;
@@ -687,6 +697,7 @@ a, a:visited {
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
+    text-align: -moz-center;
   }
 
   .video-overlay:hover {
