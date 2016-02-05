@@ -25,6 +25,7 @@ html, body {
   background-color: #f8f8f8;
   color: #2a2a2a;
   font-family: RW-R;
+  overflow-x:hidden;
 }
 
 h1 {
@@ -39,7 +40,8 @@ h1 {
   color: #00afe1;
 }
 
-a:visited {
+a, a:visited {
+  text-decoration: none;
   color: #2a2a2a;
 }
 
@@ -92,6 +94,10 @@ a:visited {
   display: table;
 }
 
+.title-container {
+  padding-top: 10px;
+}
+
 .site-title {
   text-align: center;
   font-size: 16px;
@@ -124,6 +130,10 @@ a:visited {
   margin: 0;
   display: inherit;
   font-size: 2.5em;
+}
+
+.current-page {
+  color: grey !important;
 }
 
 
@@ -203,6 +213,29 @@ a:visited {
 .bio {
   margin: 0;
   padding-bottom: 12px;
+}
+
+.mention-thumb {
+  position: relative;
+  margin-top: 70px;
+}
+
+.mention-overlay {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+}
+
+.mention-overlay-text-container {
+  display: inline-block;
+}
+
+.mention-title-text {
+  margin: 5px 0 0 0;
+}
+.mention-details-text {
+  margin: 5px 0 0 0;
 }
 
 .playback-video {
@@ -371,7 +404,7 @@ a:visited {
   font-size: small;
 }
 
-@media (min-width: 601px) {
+@media (min-width: 900px) {
 
   .homepage .site-container:before, .homepage .site-container:after {
   display: none;
@@ -500,10 +533,6 @@ a:visited {
   font-size: 26px;
   }
 
-  .menu.current-page {
-    color: grey;
-  }
-
   .site-container {
     padding: 0 25px;
     height: 100%;
@@ -513,7 +542,7 @@ a:visited {
   .title-container {
     display: table-cell;
     vertical-align: middle;
-
+    padding-top: 0;
   }
 
   .menu-container {
@@ -586,7 +615,7 @@ a:visited {
   }
 
   .menu {
-    padding: 10px 0;
+    padding: 14px 0;
     width: inherit;
     text-align: right;
   }
@@ -671,7 +700,62 @@ a:visited {
   .press-content {
     font-size: 18px;
     padding-top: 50px;
-    width: 70%;
+    width: 80%;
+  }
+
+  .mentions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+    max-width: 100%;
+  }
+
+  .mentions a {
+    max-width: 33%;
+    width: calc(33% - 4px);
+    position: relative;
+    transition: all 0.5s;
+    box-sizing: border-box;
+    margin: 0 2px 4px 2px;
+  }
+
+  .mention-thumb {
+    transition: all 0.5s;
+    background-position: center top;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    left: 0;
+    width: 100%;
+    margin-top:0;
+  }
+
+  .mention-overlay {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 33;
+    top: 0;
+  }
+
+   .mention-overlay:hover {
+    opacity: 1;
+  }
+
+  .mention-overlay-text-container {
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
   }
 
 }
