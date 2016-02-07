@@ -221,6 +221,7 @@ a, a:visited {
 .mention-thumb {
   position: relative;
   margin-top: 70px;
+  width: 50%;
 }
 
 .mention-overlay {
@@ -286,6 +287,10 @@ a, a:visited {
   width: 60%;
   height: 60%;
   transform: translate(-50%, -50%);
+  background-image: url(../img/loading.gif);
+  background-size: 10%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .video-title {
