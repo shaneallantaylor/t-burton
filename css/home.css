@@ -420,7 +420,7 @@ a, a:visited {
   font-size: small;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1170px) {
 
   .homepage .site-container:before, .homepage .site-container:after {
   display: none;
@@ -565,7 +565,12 @@ a, a:visited {
   .title-container {
     display: table-cell;
     vertical-align: middle;
-    padding-top: 208px;
+    padding-top: 0px;
+  }
+
+  .homepage .title-container {
+    /*padding-left: 50px;*/
+    padding-top: 207px;
   }
 
   .menu-container {
