@@ -28,8 +28,19 @@ html, body {
   overflow-x:hidden;
 }
 
+body {
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+}
+
 h1 {
   margin: 0;
+}
+
+.loaded {
+  opacity: 1;
 }
 
 .orange {
@@ -55,7 +66,7 @@ a, a:visited {
   overflow: hidden;
 }
 
-.homepage .site-container:before, .homepage .site-container:after {
+/*.homepage .site-container:before, .homepage .site-container:after {
   content: "";
   position: absolute;
 }
@@ -80,13 +91,26 @@ a, a:visited {
   z-index: 1;
   height: calc(100% - 6px);
   width: calc(100% - 6px);
-}
+}*/
 
 .homepage .top-bar {
   position: absolute;
   left: 0;
   z-index: 3;
   font-family: RW-EL;
+}
+
+.homepage .logo {
+  width: 81px;
+  display: block;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  display: none;
 }
 
 .top-bar {
@@ -133,13 +157,36 @@ a, a:visited {
 }
 
 .homepage .menu li {
-  margin: 0;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  margin: 20px 0;
   display: inherit;
   font-size: 2.5em;
 }
 
-.current-page {
-  color: grey !important;
+.homepage .menu #li1 {
+  background-image: url('../img/homepage-backgrounds/1.jpg');
+}
+
+.homepage .menu #li1 a {
+  color: white;
+}
+
+.homepage .menu #li2 {
+  background-image: url('../img/homepage-backgrounds/2.jpg');
+}
+
+.homepage .menu #li3 {
+  background-image: url('../img/homepage-backgrounds/3.jpg');
+}
+
+.homepage .menu #li4 {
+  background-image: url('../img/homepage-backgrounds/4.jpg');
+}
+
+.menu li .current-page {
+  color: #F8F8F8;
+  background-color: rgba(42,42,42,1);
 }
 
 
@@ -199,6 +246,9 @@ a, a:visited {
 
 .menu li a {
   text-decoration: none;
+  padding: 7px;
+  background-color: rgba(42,42,42,0);
+  transition: all 0.2s ease;
 }
 
 .content-container {
@@ -225,7 +275,7 @@ a, a:visited {
 
 .mention-thumb {
   position: relative;
-  margin-top: 70px;
+  margin-top: 90px;
   width: 50%;
 }
 
@@ -261,6 +311,17 @@ a, a:visited {
   top:0;
   left:0;
   overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.playback-view-active {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s ease 0.01s;
+  transition: opacity 0.5s ease 0.01s;
 }
 
 .playback-video {
@@ -355,6 +416,17 @@ a, a:visited {
   top:0;
   left:0;
   overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.contact-view-active {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s ease 0.01s;
+  transition: opacity 0.5s ease 0.01s;
 }
 
 .contact-container {
@@ -546,7 +618,7 @@ a, a:visited {
   }
 
   .homepage .site-title {
-    font-size: 40px;
+    font-size: 2.5vw;
   }
 
   .site-title {
@@ -571,6 +643,16 @@ a, a:visited {
   .homepage .title-container {
     /*padding-left: 50px;*/
     padding-top: 207px;
+    display: inline-block;
+  }
+
+  .homepage .logo {
+    display: block;
+    width: 81px;
+    margin: auto;
+    padding-top: 20px;
+    position: inherit;
+    transform: initial;
   }
 
   .menu-container {
@@ -579,12 +661,10 @@ a, a:visited {
   }
 
   .homepage .menu-container {
-    font-size: 14px;
-    width: 28em;
-    top: 175px;
-    left: 80%;
-    transform: translateX(-50%);
-    position: absolute;
+    right: -25px;
+    left: initial;
+    top: 0;
+    transform: initial;
   }
 
   /* Below is the fancy stuff to make the gradient work on everything but iOS Safari and IE8.
@@ -639,19 +719,50 @@ a, a:visited {
   }
 
   .homepage .menu li {
-    margin: 0;
-    display: inherit;
+    margin: 40px 0;
+    display: table;
     font-size: 3em;
+    line-height: initial;
+    padding: 5px 5px;
+    transition: all 0.5s;
+    width: 640px;
+    height: 120px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+  }
+
+  .homepage .menu #li1 {
+    background-image: url('../img/homepage-backgrounds/1.jpg');
+  }
+
+  .homepage .menu #li1 a {
+  color: #2a2a2a;
+  }
+
+  .homepage .menu #li2 {
+    background-image: url('../img/homepage-backgrounds/2.jpg');
+  }
+
+  .homepage .menu #li3 {
+    background-image: url('../img/homepage-backgrounds/3.jpg');
+  }
+
+  .homepage .menu #li4 {
+    background-image: url('../img/homepage-backgrounds/4.jpg');
   }
 
   .homepage .menu li a {
-    border-bottom-style: solid;
-    border-bottom-color: rgba(0, 175, 255, 0);
     transition: all 0.5s;
+    display: table-cell;
+    vertical-align: middle;
   }
 
-  .homepage .menu li a:hover {
-    border-bottom-color: rgba(0, 175, 255, 1);
+  .homepage .menu li:hover {
+    border-bottom: none;
+  }
+
+  .logo {
+    display: none;
   }
 
 
@@ -670,9 +781,7 @@ a, a:visited {
     border-bottom: thin solid #00afe1;
   }
 
-  .homepage  .menu-container li:hover {
-    border-bottom: none;
-  }
+
 
   .content-container {
     padding-top: 0;
@@ -689,12 +798,17 @@ a, a:visited {
   }
 
   .selected-work a {
-    max-width: 50%;
-    width: calc(50% - 4px);
+    max-width: 33%;
+    width: 33%;
     position: relative;
     transition: all 0.5s;
     box-sizing: border-box;
-    margin: 0 2px 4px 2px;
+    margin: 0 0 6px 0;
+  }
+
+  .coming-soon {
+    cursor: not-allowed;
+
   }
 
   .video-thumb {
@@ -729,6 +843,8 @@ a, a:visited {
     transform: translateY(-50%);
     text-align: center;
     text-align: -moz-center;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .video-overlay:hover {
@@ -736,7 +852,11 @@ a, a:visited {
   }
 
   .title-text {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .details-text {
+    font-size: 13px;
   }
 
   .press-content {
